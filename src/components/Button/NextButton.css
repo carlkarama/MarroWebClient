@@ -1,0 +1,13 @@
+.next-button {
+    display: flex;
+    justify-content: center;
+}
+
+button {
+    width: 20%;;
+    color: white;
+    border: none;
+    border-radius: 15px;
+    font-size: large;
+    background-color: blue;
+}

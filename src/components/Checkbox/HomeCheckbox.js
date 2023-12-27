@@ -4,6 +4,7 @@ import AttachMoneyRoundedIcon from '@mui/icons-material/AttachMoneyRounded';
 import OfflineBoltRoundedIcon from '@mui/icons-material/OfflineBoltRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import Checkbox from '@mui/material/Checkbox';
+import NextButton from '../Button/NextButton';
 
 export const HomeCheckbox = () => {
 
@@ -25,9 +26,30 @@ export const HomeCheckbox = () => {
     const checkboxesCheckedCount = Object.values(checkboxState).filter((checked) => checked).length;
     const atLeastTwoChecked = checkboxesCheckedCount >= 2;
 
+    const [isNextButtonEnabled, setIsNextButtonEnabled] = useState(false);
+
+    // Callback for handling "NEXT" button click
+    const handleNextButtonClick = () => {
+        // Implement your logic for what should happen when the "NEXT" button is clicked
+        console.log('NEXT button clicked!');
+    };
+
+    React.useEffect(() => {
+        setIsNextButtonEnabled(atLeastTwoChecked);
+    }, [atLeastTwoChecked]);
+
     return (
             <div>
+                   {
+                        atLeastTwoChecked ? (
+                            <p>At least 2 checkboxes are checked.</p>
+                            
+                        ) : (
+                            <p>Please check at least 2 checkboxes.</p>
+                        )
+                    }
                 <div className="checkbox-group">
+                    
                     <div className="tile">
                         <div className="label">
                             <OfflineBoltRoundedIcon fontSize="large"></OfflineBoltRoundedIcon>
@@ -78,15 +100,9 @@ export const HomeCheckbox = () => {
                             
                         </div>
                     </div>
+                
                 </div>
-                {
-                    atLeastTwoChecked ? (
-                        <p>At least 2 checkboxes are checked.</p>
-                        
-                    ) : (
-                        <p>Please check at least 2 checkboxes.</p>
-                    )
-                }
+                      <NextButton onClick={handleNextButtonClick} disabled={!isNextButtonEnabled} />
             </div>
   );
 };
