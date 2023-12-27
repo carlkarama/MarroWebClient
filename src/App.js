@@ -5,7 +5,9 @@ function App() {
   return (
     <>
       <div className="App">
-      </div><Checkbox />
+        <h1>Select at least 2 options to begin pricing strategy</h1>
+      </div>
+      <Checkbox />
     </>
   );
 }

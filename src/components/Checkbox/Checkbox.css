@@ -3,4 +3,59 @@
     justify-content: space-evenly;
     align-items: center;
     height: 100vh;
+    gap: 20px;
+}
+
+.tile {
+    border: 1px solid black;
+    width: 100px;
+    height: 100px;
+}
+
+input[type="checkbox"] {
+    display: flex;
+    justify-content: space-around;
+    background-color: white;
+    border-radius: 10%;
+    cursor: pointer; 
+    border: 3px solid transparent;
+    outline: none;
+    box-shadow: 15px 15px 15px rgba(2, 28, 53, 0.05);
+}
+
+input[type="checkbox"]:after {
+    position: relative;
+    font-family: "Font Awesome 5 Free";
+    content: "\f111";
+    font-weight: 400px;
+    font-size: 25px;
+    color: red;
+    top: 10%;
+    left: 10%;
+}
+
+input[type="checkbox"]:hover {
+    transform: scale(1.08);
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    height: 80%;
+    width: 100%;
+    bottom: 0;
+    position: relative;
+    cursor: pointer;
+}
+
+.label {
+    font-size: 20px;
+    color: 2c2c51;
+}
+
+input[type="checkbox"]:checked + label {
+    animation: grow 0.5;
 }

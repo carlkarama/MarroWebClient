@@ -1,5 +1,7 @@
 .App {
   display: flex;
-  justify-content: space-evenly;
-  background-color: red;
+  border: 10px red;
+  width: 40%;
+  font-size: 10%;
+  justify-content: center;
 }
