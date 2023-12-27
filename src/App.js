@@ -1,13 +1,12 @@
 import './App.css';
-import { Checkbox } from './components/Checkbox/Checkbox.js';
+import { HomeCheckbox } from './components/Checkbox/HomeCheckbox.js';
 
 function App() {
   return (
     <>
       <div className="App">
-        <h1>Select at least 2 options to begin pricing strategy</h1>
       </div>
-      <Checkbox />
+      <HomeCheckbox />
     </>
   );
 }
