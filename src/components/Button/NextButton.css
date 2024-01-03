@@ -3,7 +3,12 @@
     justify-content: center;
 }
 
-button {
+.next-button > button:disabled {
+    background-color: lightgray;
+    /* Add any other styles for the disabled state here */
+}
+
+.next-button > button {
     width: 20%;;
     color: white;
     border: none;

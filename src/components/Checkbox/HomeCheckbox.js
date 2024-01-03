@@ -73,7 +73,7 @@ export const HomeCheckbox = () => {
                         </div>
                         <div className="checkbox-items">
                             <div className="cheaper-label">Cheaper</div>
-                            <div className="heckbox"></div>
+                            <div className="checkbox"></div>
                             <div className="checkbox-selection">
                                 <Checkbox {...label} 
                                 checked={checkboxState.cheaper}
