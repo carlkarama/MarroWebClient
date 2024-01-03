@@ -1,5 +1,5 @@
 import './App.css';
-import { HomeCheckbox } from './components/Checkbox/HomeCheckbox.tsx';
+import { HomeCheckbox } from './components/Checkbox/HomeCheckbox';
 
 function App() {
   return (

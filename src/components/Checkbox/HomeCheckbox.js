@@ -1,10 +1,10 @@
-import React, {useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import './Checkbox.css';
 import AttachMoneyRoundedIcon from '@mui/icons-material/AttachMoneyRounded';
 import OfflineBoltRoundedIcon from '@mui/icons-material/OfflineBoltRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import Checkbox from '@mui/material/Checkbox';
-import NextButton from '../Button/NextButton.tsx';
+import NextButton from '../Button/NextButton';
 
 export const HomeCheckbox = () => {
 
@@ -34,7 +34,7 @@ export const HomeCheckbox = () => {
         console.log('NEXT button clicked!');
     };
 
-    React.useEffect(() => {
+    useEffect(() => {
         setIsNextButtonEnabled(atLeastTwoChecked);
     }, [atLeastTwoChecked]);
 
