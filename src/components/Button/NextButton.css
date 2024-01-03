@@ -5,7 +5,6 @@
 
 .next-button > button:disabled {
     background-color: lightgray;
-    /* Add any other styles for the disabled state here */
 }
 
 .next-button > button {
