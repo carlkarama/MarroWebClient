@@ -3,7 +3,7 @@
 Frontend of Marro web app.
 
 ## Homepage
-[](design/homepage/page/homepage-v.1.0.png)
+[](design/homepage/landing-page/homepage-v1.0.png)
 
 ### Usecase
 
