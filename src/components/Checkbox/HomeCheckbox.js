@@ -40,14 +40,17 @@ export const HomeCheckbox = () => {
 
     return (
             <div>
-                   {
+                <div className="homepage-instructions">
+                    {
                         atLeastTwoChecked ? (
-                            <p>At least 2 checkboxes are checked.</p>
+                            <p className="after-checked">At least 2 checkboxes are checked. You can click next ✅</p>
                             
                         ) : (
-                            <p>Please check at least 2 checkboxes.</p>
+                            <p className="before-checked">Please check at least 2 checkboxes to activate next button.</p>
                         )
                     }
+                </div>
+                   
                 <div className="checkbox-group">
                     
                     <div className="tile">
