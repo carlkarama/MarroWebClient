@@ -3,7 +3,9 @@
 Frontend of Marro web app.
 
 ## Homepage
-[](design/homepage/landing-page/homepage-v1.0.png)
+
+<img width="1512" alt="homepage-v1 0" src="https://github.com/carlkarama/MarroWebClient/assets/48504139/7a779578-9963-42f4-b690-383efdeff07c">
+
 
 ### Usecase
 
