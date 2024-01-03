@@ -4,7 +4,7 @@ Frontend of Marro web app.
 
 ## Homepage
 
-<img width="1512" alt="homepage-v1 0" src="https://github.com/carlkarama/MarroWebClient/assets/48504139/7a779578-9963-42f4-b690-383efdeff07c">
+<img width="1508" alt="Screenshot 2024-01-03 at 9 52 27 pm" src="https://github.com/carlkarama/MarroWebClient/assets/48504139/34cf78b6-6f7a-4711-b12c-21ec5a9dcc0e">
 
 
 ### Usecase
