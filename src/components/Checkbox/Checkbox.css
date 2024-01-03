@@ -50,3 +50,19 @@
     font-size: 30px;
     color: 2c2c51;
 }
+
+.homepage-instructions {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 150px;
+}
+
+.homepage-instructions > .before-checked {
+    color: brown;
+}
+
+.homepage-instructions > .after-checked {
+    color: green;
+}
