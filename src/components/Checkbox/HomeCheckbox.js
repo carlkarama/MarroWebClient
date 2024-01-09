@@ -5,6 +5,7 @@ import OfflineBoltRoundedIcon from '@mui/icons-material/OfflineBoltRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import Checkbox from '@mui/material/Checkbox';
 import NextButton from '../Button/NextButton';
+import { Route } from "react-router-dom";
 
 export const HomeCheckbox = () => {
 
@@ -105,9 +106,9 @@ export const HomeCheckbox = () => {
                     </div>
                 
                 </div>
-                      <NextButton onClick={handleNextButtonClick} disabled={!isNextButtonEnabled} />
+                    <NextButton onClick={handleNextButtonClick} disabled={!isNextButtonEnabled} />
             </div>
-  );
+    );
 };
 
 export default HomeCheckbox;
