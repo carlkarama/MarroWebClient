@@ -1,0 +1,10 @@
+.rate-header {
+    margin-top: 10%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.rate-header > h1 {
+    font-weight: bold;
+}

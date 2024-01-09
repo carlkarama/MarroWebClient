@@ -1,13 +1,16 @@
-import React from "react"
+import React from 'react'
 import './NextButton.css';
+import { Link } from 'react-router-dom';
 
 
-const nextButton = ({onClick, disabled}) => {
+const NextButton = ({onClick, disabled}) => {
    return (
-        <div className="next-button">
-            <button onClick={onClick} disabled={disabled}>NEXT</button>
-        </div>
+    <Link to="/search">
+        <div className="next-button"> 
+                <button onClick={onClick} disabled={disabled}>NEXT</button>  
+        </div>       
+     </Link>    
    )
 }
 
-export default nextButton;
+export default NextButton;
