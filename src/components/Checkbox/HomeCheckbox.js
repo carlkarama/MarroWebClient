@@ -106,7 +106,7 @@ export const HomeCheckbox = () => {
                     </div>
                 
                 </div>
-                    <NextButton onClick={handleNextButtonClick} disabled={!isNextButtonEnabled} />
+                    <NextButton onClick={handleNextButtonClick} disabled={!isNextButtonEnabled}/>
             </div>
     );
 };
