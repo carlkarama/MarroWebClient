@@ -1,15 +1,19 @@
 import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import { json } from 'react-router-dom';
+import User from '../../interfaces/User';
 
-const SearchBox = ({ setResults }) => {
+interface SearchBoxProps {
+    setResults: React.Dispatch<React.SetStateAction<User[]>>;
+}
+
+const SearchBox: React.FC<SearchBoxProps> = ({ setResults }) => {
     const [input, setInput] = useState("");
 
-    const fetchData = (value) => {
+    const fetchData = (value: string) => {
         fetch("https://jsonplaceholder.typicode.com/users")
             .then((response) => response.json())
             .then((json) => {
-                const results = json.filter((user) => {
+                const results = json.filter((user: any) => {
                     return (
                         value && 
                         user && 
@@ -21,21 +25,15 @@ const SearchBox = ({ setResults }) => {
             });
     }
 
-    const handleChange = (value) => {
+    const handleChange = (value: string) => {
         setInput(value);
         fetchData(value);
     }
     return (
-        <div>
             <div className="input-wrapper">
                 <FaSearch id="search-icon"></FaSearch>
-                <input 
-                    placeholder="Type to search" 
-                    value={input} 
-                    onChange={(e) => handleChange(e.target.value)}
-                />
+                <input placeholder="Type to search" value={input} onChange={(e) => handleChange(e.target.value)}/>
             </div>
-        </div>
     )
 }
 
