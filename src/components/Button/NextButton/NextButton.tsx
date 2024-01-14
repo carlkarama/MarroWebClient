@@ -3,11 +3,11 @@ import './NextButton.css';
 import { Link } from 'react-router-dom';
 
 
-const NextButton = ({onClick, disabled}) => {
+const NextButton = ({route, onClick, disabled}) => {
    return (
-    <Link to={`/search`}> 
+    <Link to={route}> 
         <div className="next-button"> 
-                <button onClick={onClick} disabled={disabled}>NEXT</button>  
+                <button onClick={onClick} disabled={disabled} role="next-btn">NEXT</button>  
         </div>       
      </Link>    
    )
