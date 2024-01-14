@@ -7,7 +7,7 @@ function App() {
     <>
       <div className="App">
       </div>
-      <HomeCheckbox />
+      <HomeCheckbox route="/search"/>
     </> 
   );
 }
