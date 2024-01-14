@@ -7,7 +7,7 @@ const NextButton = ({route, onClick, disabled}) => {
    return (
     <Link to={route}> 
         <div className="next-button"> 
-                <button onClick={onClick} disabled={disabled}>NEXT</button>  
+                <button onClick={onClick} disabled={disabled} role="next-btn">NEXT</button>  
         </div>       
      </Link>    
    )
