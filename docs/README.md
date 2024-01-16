@@ -1,6 +1,6 @@
 # MarroClient
 
-Frontend of Marro web app.
+Frontend of Marro web app. The first place to get pricing solutions for creative endevours 🔥
 
 ## Homepage
 
