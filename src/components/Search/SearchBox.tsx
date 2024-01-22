@@ -1,27 +1,29 @@
 import React, { useState } from 'react';
 import { FaSearch } from 'react-icons/fa';
-import User from '../../interfaces/User';
+import { Creative } from '../../interfaces/Search/Creative';
 
 interface SearchBoxProps {
-    setResults: React.Dispatch<React.SetStateAction<User[]>>;
+    setResults: React.Dispatch<React.SetStateAction<Creative[]>>;
 }
 
 const SearchBox: React.FC<SearchBoxProps> = ({ setResults }) => {
     const [input, setInput] = useState("");
 
     const fetchData = (value: string) => {
-        fetch("https://jsonplaceholder.typicode.com/users")
+        fetch("http://localhost:8080/api/search")
             .then((response) => response.json())
             .then((json) => {
-                const results = json.filter((user: any) => {
+                const results = json.filter((creative: any) => {
                     return (
                         value && 
-                        user && 
-                        user.name && 
-                        user.name.toLowerCase().includes(value)
+                        creative.toLowerCase().includes(value.toLowerCase())
                     );
                 });
+                console.log(results);
                 setResults(results);
+            }).catch((error) => {
+                // Handle errors if any
+                console.error("Error fetching data:", error);
             });
     }
 
