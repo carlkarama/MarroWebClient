@@ -1,18 +1,18 @@
 import React from 'react';
 import './SearchResultsList.css';
 import  SearchResult from '../SearchResult/SearchResult';
-import User from '../../interfaces/User';
+import { Creative } from '../../interfaces/Search/Creative';
 
 interface SearchResultListProps {
-    results: User[];
+    results: Creative[];
 }
 
 const SearchResultList: React.FC<SearchResultListProps> = ({ results }) => {
     return (
         <div className="results-list">
             {
-            results.map((result: User, id: number) => {
-            return <SearchResult result={result} key={id} />;
+                results.map((result: Creative, id: number) => {
+                return <SearchResult result={result} key={id} />;        
             })}  
         </div>
     );
