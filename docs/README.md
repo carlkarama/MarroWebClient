@@ -23,3 +23,15 @@ A long term approach would be to create pricing strategies for numerous creative
 
 On the web UI, select 2 variables you want to consider when coming up with a price. We'll calibrate the price from the
 backend using these variables and add a percentage margin of profit to the final price. The final price is the daily rate.
+
+### How to run
+
+1. Make sure to install npm i.e. version 10.2.3 or beyond
+
+```Install npm```
+
+2. Run startup script
+
+```npm start```
+
+3. Go to your browser and head to address http://localhost:3000/ to see your application. 
