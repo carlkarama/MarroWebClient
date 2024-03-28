@@ -4,9 +4,9 @@ import AttachMoneyRoundedIcon from '@mui/icons-material/AttachMoneyRounded';
 import OfflineBoltRoundedIcon from '@mui/icons-material/OfflineBoltRounded';
 import LocalFireDepartmentRoundedIcon from '@mui/icons-material/LocalFireDepartmentRounded';
 import Checkbox from '@mui/material/Checkbox';
-import NextButton from '../Button/NextButton/NextButton';
+import NextButton from '../../components/Button/NextButton/NextButton';
 
-export const HomeCheckbox = ({ route }) => {
+export const Homepage = ({ route }) => {
 
     const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -110,4 +110,4 @@ export const HomeCheckbox = ({ route }) => {
     );
 };
 
-export default HomeCheckbox;
+export default Homepage;

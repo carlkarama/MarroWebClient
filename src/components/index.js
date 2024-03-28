@@ -1,4 +1,4 @@
-export { default as NavBar } from './Navbar/Navbar';
+export { default as NavBar } from './Navbar/NavBar';
 export { default as CTA } from './CTA/CTA';
 export { default as Feature } from './Feature/Feature';
 export { default as Search } from './Search/SearchBox';
