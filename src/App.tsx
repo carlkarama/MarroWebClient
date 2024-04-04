@@ -1,14 +1,14 @@
 import React from 'react';
 import './App.css';
-import { HomeCheckbox } from './components/Checkbox/HomeCheckbox';
-import { NavBar, Feature, CTA } from './components/index'
+import { Homepage } from './pages/index';
+import { NavBar, Feature, CTA } from './components'
 
 function App() {
   return (
     <>
       <div className="App">
       </div>
-      <HomeCheckbox route="/search"/>
+      <Homepage route="/search"/>
     </> 
   );
 }
