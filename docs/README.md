@@ -13,6 +13,12 @@ Marro is born out of an idea that creative services should have a standadized pr
 Marro uses the old adage of do you want it good or fast or cheap. This philosophy allows creatives to quickly
 come up with a standard price for their services.
 
+
+### Features
+- Choose pricing strategy depending on budgets
+- View range of pricing services
+- Download pdf of pricing for each individual job (Premium)
+
 ### Initial Demography
 
 Currently Marro serves videographers and spits out a daily rate that should allow them to cater to their services.
