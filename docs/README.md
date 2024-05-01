@@ -18,6 +18,7 @@ come up with a standard price for their services.
 - Choose pricing strategy depending on budgets
 - View range of pricing services
 - Download pdf of pricing for each individual job (Premium)
+- View list of services offered in comparison to other sites like indeed, seek and upwork
 
 ### Initial Demography
 
