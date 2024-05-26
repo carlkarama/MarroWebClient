@@ -1,7 +1,7 @@
 import { Creative } from "../../interfaces/Search/Creative";
 
 export const fetchCreativeFields = (value: string, setResults: React.Dispatch<React.SetStateAction<Creative[]>>) => {
-    fetch("http://localhost:8080/api/search")
+    fetch("http://localhost:8080/api/v1/search")
         .then((response) => response.json())
         .then((json) => {
             const results = json.filter((creative: any) => {
