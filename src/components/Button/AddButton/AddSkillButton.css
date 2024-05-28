@@ -1,0 +1,12 @@
+.add-button > button:disabled {
+    background-color: blue;
+}
+
+.add-button > button {
+    width: 30%;;
+    color: blue;
+    border: none;
+    border-radius: 15px;
+    font-size: large;
+    background-color: transparent;
+}

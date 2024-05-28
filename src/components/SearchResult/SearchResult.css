@@ -2,3 +2,8 @@
     font-family: 'system-ui';
     background-color: #efefef;
 }
+
+.search-result {
+    display: flex;
+    justify-content: space-between;
+}
