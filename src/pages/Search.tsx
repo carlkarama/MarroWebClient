@@ -8,7 +8,7 @@ const Search = () => {
     return (
         <div className="search-bar-container">
             <SearchBox setResults={setResults}/>
-            <SearchResultList results={results}/>
+            {results.length > 0 && <SearchResultList results={results}/>}
         </div>
     )
 }
