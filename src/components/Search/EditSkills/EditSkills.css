@@ -1,0 +1,45 @@
+.input-field-skills-to-add > input {
+    background-color: white;
+    border-radius: 35px;
+    border-width: 2px;
+}
+
+.skills-container {
+    background-color: aliceblue;
+}
+
+.skills-add-button > button {
+    color: white;
+    background-color: blue;
+}
+
+.skills-suggested-button > button {
+    color: rgb(29, 85, 157);
+    background-color: rgb(205, 228, 245);
+}
+
+.skills-suggested-header > h3, .skills-suggested-header > h3, .skills-add-new-header > h3 {
+    font-style: normal;
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(46, 56, 73);
+    font-family: SeekSans, "SeekSans Fallback", Arial;
+}
+
+.skills-added-button > button, .skills-suggested-button > button {
+    margin: 10px;
+    padding: 10px;
+    border-radius: 40px;
+    font-size: 16px;
+    font-weight: 100;
+    line-height: 25px;
+    font-family: SeekSans, "SeekSans Fallback", Arial;
+    border-style: none;
+    display: inline;
+    justify-content: space-around;
+}
+
+.skills-added-button > button {
+    color: rgb(46, 56, 73);
+    background-color: rgb(231, 238, 244);
+}

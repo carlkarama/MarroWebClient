@@ -1,19 +1,22 @@
 import React from 'react';
 import './SearchResult.css';
-import AddButton from '../Button/AddButton/AddSkillButton';
+import { Creative } from '../../interfaces/Search/Creative';
 
-const SearchResult = ({ result }) => {
+interface SearchResultProps {
+    result: Creative;
+    addSkill: (skill: string) => void;
+}
 
-    // Callback for handling "Add" button click
-    const handleAddButtonClick = () => {
-            // Implement your logic for what should happen when the "Add" button is clicked
-            console.log('Add button clicked!');
+const SearchResult: React.FC<SearchResultProps> = ({ result, addSkill }) => {
+    const handleAddSkill = () => {
+        addSkill(result.field);
     };
-    
+
     return (
-        <>
-            <div className="search-result">{result} <AddButton onClick={handleAddButtonClick} disabled={false}></AddButton></div>
-        </>
+        <div className="search-result">
+            <span>{result.field}</span>
+            <button onClick={handleAddSkill}>+</button>
+        </div>
     );
 }
 
