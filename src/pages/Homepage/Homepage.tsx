@@ -28,9 +28,7 @@ export const Homepage = ({ route }) => {
 
     const [isNextButtonEnabled, setIsNextButtonEnabled] = useState(false);
 
-    // Callback for handling "NEXT" button click
     const handleNextButtonClick = () => {
-        // Implement your logic for what should happen when the "NEXT" button is clicked
         console.log('NEXT button clicked!');
     };
 
