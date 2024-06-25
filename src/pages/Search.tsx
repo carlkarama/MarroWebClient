@@ -45,16 +45,16 @@ const Search: React.FC = () => {
         <SearchResultList results={searchResults} addCreative={handleAddCreative} />
       )}
 
-      <div className="suggested-skills">
+      {/* <div className="suggested-skills">
         <h3>Suggested skills based on your career history</h3>
         <div className="skills-container">
-          {suggestedCreatives.map(creative => (
+          {searchResults.map(creative => (
             <button key={creative.id} onClick={() => handleAddCreative(creative)}>
               {creative.field} +
             </button>
           ))}
         </div>
-      </div>
+      </div> */}
 
       <div className="added-skills">
         <h3>Added skills</h3>
