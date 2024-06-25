@@ -1,25 +1,40 @@
 import React, { useState } from 'react';
-import { FaSearch } from 'react-icons/fa';
 import { Creative } from '../../interfaces/Search/Creative';
 import { fetchCreativeFields } from '../../services/Search/search';
 
 interface SearchBoxProps {
     setResults: React.Dispatch<React.SetStateAction<Creative[]>>;
-}
-
-const SearchBox: React.FC<SearchBoxProps> = ({ setResults }) => {
-    const [input, setInput] = useState("");
-
-    const handleChange = (value: string) => {
-        setInput(value);
-        fetchCreativeFields(value, setResults);
-    }
+    addCreative: (creative: Creative) => void;
+  }
+  
+  const SearchBox: React.FC<SearchBoxProps> = ({ setResults, addCreative }) => {
+    const [newSkill, setNewSkill] = useState<string>("");
+  
+    const handleNewSkillChange = (value: string) => {
+      setNewSkill(value);
+      fetchCreativeFields(value, setResults);
+    };
+  
+    const handleNewSkillAdd = () => {
+      if (newSkill.trim() === '') return;
+      const creative: Creative = { id: Date.now(), field: newSkill };
+      addCreative(creative);
+      setNewSkill("");
+    };
+  
     return (
-            <div className="input-wrapper">
-                <FaSearch id="search-icon"></FaSearch>
-                <input placeholder="Type to search" value={input} onChange={(e) => handleChange(e.target.value)}/>
-            </div>
-    )
-}
-
-export default SearchBox;
+      <div>
+        <div className="add-skill">
+          <input
+            type="text"
+            placeholder="e.g. Film Director"
+            value={newSkill}
+            onChange={(e) => handleNewSkillChange(e.target.value)}
+          />
+          <button onClick={handleNewSkillAdd}>Add</button>
+        </div>
+      </div>
+    );
+  };
+  
+  export default SearchBox;

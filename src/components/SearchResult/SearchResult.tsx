@@ -3,21 +3,16 @@ import './SearchResult.css';
 import { Creative } from '../../interfaces/Search/Creative';
 
 interface SearchResultProps {
-    result: Creative;
-    addSkill: (skill: string) => void;
+  result: Creative;
+  addCreative: (creative: Creative) => void;
 }
 
-const SearchResult: React.FC<SearchResultProps> = ({ result, addSkill }) => {
-    const handleAddSkill = () => {
-        addSkill(result.field);
-    };
-
-    return (
-        <div className="search-result">
-            <span>{result.field}</span>
-            <button onClick={handleAddSkill}>+</button>
-        </div>
-    );
-}
+const SearchResult: React.FC<SearchResultProps> = ({ result, addCreative }) => {
+  return (
+    <div className="search-result" onClick={() => addCreative(result)}>
+      {result.field}
+    </div>
+  );
+};
 
 export default SearchResult;
