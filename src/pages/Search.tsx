@@ -3,11 +3,8 @@ import axios from 'axios';
 import SearchBox from '../components/Search/SearchBox';
 import SearchResultList from '../components/SearchResultList/SearchResultList';
 import '../components/Search/EditSkills/EditSkills';
+import { Creative } from "../interfaces/Search/Creative";
 
-interface Creative {
-  id: number;
-  field: string;
-}
 
 const Search: React.FC = () => {
   const [suggestedCreatives, setSuggestedCreatives] = useState<Creative[]>([]);
