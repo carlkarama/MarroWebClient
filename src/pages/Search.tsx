@@ -7,20 +7,20 @@ import { Creative } from "../interfaces/Search/Creative";
 
 
 const Search: React.FC = () => {
-  const [suggestedCreatives, setSuggestedCreatives] = useState<Creative[]>([]);
+  //const [suggestedCreatives, setSuggestedCreatives] = useState<Creative[]>([]);
   const [addedCreatives, setAddedCreatives] = useState<Creative[]>([]);
   const [searchResults, setSearchResults] = useState<Creative[]>([]);
 
-  useEffect(() => {
-    // Fetch suggested creatives from the API
-    axios.get('http://localhost:8080/api/v1/search')
-      .then(response => {
-        setSuggestedCreatives(response.data);
-      })
-      .catch(error => {
-        console.error('There was an error fetching the suggested creatives!', error);
-      });
-  }, []);
+//   useEffect(() => {
+//     // Fetch suggested creatives from the API
+//     axios.get('http://localhost:8080/api/v1/search')
+//       .then(response => {
+//         setSuggestedCreatives(response.data);
+//       })
+//       .catch(error => {
+//         console.error('There was an error fetching the suggested creatives!', error);
+//       });
+//   }, []);
 
   const handleAddCreative = (creative: Creative) => {
     if (!addedCreatives.some(c => c.field.toLowerCase() === creative.field.toLowerCase())) {

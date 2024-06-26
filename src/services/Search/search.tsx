@@ -1,4 +1,5 @@
 import { Creative } from "../../interfaces/Search/Creative";
+import { v4 as uuidv4 } from 'uuid';
 
 export const fetchCreativeFields = (value: string, setResults: React.Dispatch<React.SetStateAction<Creative[]>>) => {
     fetch("http://localhost:8080/api/v1/search")
@@ -8,8 +9,8 @@ export const fetchCreativeFields = (value: string, setResults: React.Dispatch<Re
         .filter((creative: string) => {
           return value && creative.toLowerCase().includes(value.toLowerCase());
         })
-        .map((creative: string, index: number) => ({
-          id: index,
+        .map((creative: string) => ({
+          id: uuidv4(),
           field: creative,
         }));
         setResults(results)
