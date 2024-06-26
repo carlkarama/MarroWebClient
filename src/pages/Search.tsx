@@ -35,7 +35,7 @@ const Search: React.FC = () => {
   return (
     <div className="container">
         <div className="edit-skills">
-            <h2>Edit skills</h2>
+            {/* <h2>Edit skills</h2> */}
             <p>Enter the creative fields you want to budget for.</p>
 
             <SearchBox setResults={setSearchResults} addCreative={handleAddCreative} />
