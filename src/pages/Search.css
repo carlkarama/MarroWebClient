@@ -1,4 +1,25 @@
-.edit-skills {
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    max-width: 600px; /* or any max width you prefer */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+  }
+
+  .edit-skills {
     padding: 20px;
     max-width: 600px;
     margin: auto;
@@ -115,3 +136,4 @@
   .actions button:last-child:hover {
     background-color: #999;
   }
+  
