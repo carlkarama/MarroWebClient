@@ -1,8 +1,9 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
+import { Field } from '../../interfaces/Field/Field';
 
 interface FieldsContextType {
-  fields: string[];
-  setFields: React.Dispatch<React.SetStateAction<string[]>>;
+  fields: Field[];
+  setFields: React.Dispatch<React.SetStateAction<Field[]>>;
 }
 
 const FieldsContext = createContext<FieldsContextType | undefined>(undefined);
@@ -16,7 +17,7 @@ export const useFields = () => {
 };
 
 export const FieldsProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const [fields, setFields] = useState<string[]>([]);
+  const [fields, setFields] = useState<Field[]>([]);
 
   return (
     <FieldsContext.Provider value={{ fields, setFields }}>

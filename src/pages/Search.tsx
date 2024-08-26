@@ -8,7 +8,7 @@ import { Creative } from "../interfaces/Search/Creative";
 import './Search.css'
 
 const Search: React.FC = () => {
-  const { fields, setFields } = useFields(); // Now also access the current fields
+  const { fields, setFields } = useFields();
   const navigate = useNavigate();
   const [addedCreatives, setAddedCreatives] = useState<Creative[]>([]);
   const [searchResults, setSearchResults] = useState<Creative[]>([]);
@@ -17,7 +17,13 @@ const Search: React.FC = () => {
     if (!addedCreatives.some(c => c.field.toLowerCase() === creative.field.toLowerCase())) {
       setAddedCreatives([...addedCreatives, creative]);
 
-      setFields([...fields, creative.field]);
+      setFields([...fields, {
+        fieldName: creative.field,
+        pricingType: 'Per Hour',
+        price: '0',
+        hours: 0,
+        total: 0
+      }]);
     }
   };
 
@@ -25,7 +31,13 @@ const Search: React.FC = () => {
     const updatedCreatives = addedCreatives.filter(creative => creative.id !== creativeId);
     setAddedCreatives(updatedCreatives);
 
-    setFields(updatedCreatives.map(creative => creative.field));
+    setFields(updatedCreatives.map(creative => ({
+      fieldName: creative.field,
+      pricingType: 'Per Hour',
+      price: '0',
+      hours: 0,
+      total: 0
+    })));
   };
 
   const handleSave = () => {
