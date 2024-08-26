@@ -22,7 +22,8 @@ const Search: React.FC = () => {
         pricingType: 'Per Hour',
         price: '0',
         hours: 0,
-        total: 0
+        total: 0,
+        phases: []
       }]);
     }
   };
@@ -36,7 +37,8 @@ const Search: React.FC = () => {
       pricingType: 'Per Hour',
       price: '0',
       hours: 0,
-      total: 0
+      total: 0,
+      phases: []
     })));
   };
 
