@@ -12,11 +12,8 @@ html, body {
     justify-content: center;
     align-items: center;
     width: 100%;
-    max-width: 600px; /* or any max width you prefer */
+    max-width: 600px;
     padding: 20px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    background-color: #fff;
-    border-radius: 8px;
   }
 
   .edit-skills {
@@ -24,8 +21,6 @@ html, body {
     max-width: 600px;
     margin: auto;
     background-color: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     font-family: Arial, sans-serif;
   }
   
@@ -47,24 +42,28 @@ html, body {
   .add-skill input {
     flex: 1;
     padding: 10px;
-    border: 1px solid #ccc;
-    border-radius: 4px 0 0 4px;
+    margin-right: 10px;
+    border-radius: 20px;
+    border: 1px solid black;
     outline: none;
     font-size: 14px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
   
   .add-skill button {
     padding: 10px 20px;
     border: none;
-    background-color: #0073e6;
-    color: #fff;
-    border-radius: 0 4px 4px 0;
+    background: transparent;
+    color: black;
+    border: 1px solid black;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 14px;
   }
   
   .add-skill button:hover {
-    background-color: #005bb5;
+    color: white;
+    background-color: black;
   }
   
   .suggested-skills, .added-skills {
@@ -84,10 +83,11 @@ html, body {
   
   .skills-container button, .skills-container span {
     padding: 5px 10px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    background: transparent;
+    border: 1px solid black;
     border-radius: 15px;
     font-size: 14px;
+    color: black;
     cursor: pointer;
   }
   
@@ -118,22 +118,26 @@ html, body {
   .actions button {
     padding: 10px 20px;
     border: none;
-    background-color: #0073e6;
-    color: #fff;
-    border-radius: 4px;
+    background: transparent;
+    color: black;
+    border: 1px solid black;
+    border-radius: 20px;
     cursor: pointer;
     font-size: 14px;
   }
   
   .actions button:hover {
-    background-color: #005bb5;
+    color: white;
+    background-color: black;
   }
   
   .actions button:last-child {
-    background-color: #ccc;
+    background-color: black;
+    color: white;
   }
   
   .actions button:last-child:hover {
-    background-color: #999;
+    color: white;
+    background-color: black;
   }
   
