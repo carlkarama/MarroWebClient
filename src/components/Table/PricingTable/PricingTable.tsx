@@ -2,6 +2,7 @@ import React from 'react';
 import { useFields } from '../../../hooks/context/FieldsContext';
 import { ProductionPhase } from '../../../interfaces/Phase/ProductionPhase';
 import { Field } from '../../../interfaces/Field/Field';
+import PhaseChips from './PhaseChips';
 
 const allPhases: ProductionPhase[] = [
   "Development",
@@ -81,16 +82,11 @@ const PricingTable: React.FC = () => {
               </td>
               <td>{field.total}</td>
               <td>
-                {allPhases.map((phase) => (
-                  <label key={phase}>
-                    <input
-                      type="checkbox"
-                      checked={field.phases.includes(phase)}
-                      onChange={() => togglePhaseSelection(index, phase)}
-                    />
-                    {phase}
-                  </label>
-                ))}
+                <PhaseChips
+                  selectedPhases={field.phases}
+                  allPhases={allPhases}
+                  onToggle={(phase) => togglePhaseSelection(index, phase)}
+                />
               </td>
             </tr>
           ))}
