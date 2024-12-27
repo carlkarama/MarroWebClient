@@ -3,6 +3,7 @@ import { useFields } from '../../../hooks/context/FieldsContext';
 import { ProductionPhase } from '../../../interfaces/Phase/ProductionPhase';
 import { Field } from '../../../interfaces/Field/Field';
 import PhaseChips from './PhaseChips';
+import './PricingTable.css';
 
 const allPhases: ProductionPhase[] = [
   "Development",
@@ -62,6 +63,7 @@ const PricingTable: React.FC = () => {
               <td>{field.fieldName}</td>
               <td>
                 <select
+                  className="pill-style"
                   value={field.pricingType}
                   onChange={(e) => handleFieldChange(index, 'pricingType', e.target.value)}
                 >
@@ -71,6 +73,7 @@ const PricingTable: React.FC = () => {
               </td>
               <td>
                 <input
+                  className="pill-style"
                   type="number"
                   value={field.price}
                   onChange={(e) => handleFieldChange(index, 'price', e.target.value)}
@@ -78,6 +81,7 @@ const PricingTable: React.FC = () => {
               </td>
               <td>
                 <input
+                  className="pill-style"
                   type="number"
                   value={field.hours}
                   onChange={(e) => handleFieldChange(index, 'hours', e.target.value)}
