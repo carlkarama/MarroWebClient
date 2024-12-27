@@ -18,9 +18,12 @@ const PricingTable: React.FC = () => {
     const updatedFields = [...fields];
     updatedFields[index] = { ...updatedFields[index], [key]: value };
 
-    if (key === 'price' || key === 'hours') {
-      updatedFields[index].total = 
-        parseFloat(updatedFields[index].price) * parseFloat(updatedFields[index].hours.toString());
+    if (key === 'price' || key === 'hours' || key == 'pricingType') {
+      if (updatedFields[index].pricingType == 'Per Project') {
+        updatedFields[index].total = parseFloat(updatedFields[index].price);
+      } else {
+        updatedFields[index].total = parseFloat(updatedFields[index].price) * parseFloat(updatedFields[index].hours.toString());
+      }  
     }
 
     setFields(updatedFields);
