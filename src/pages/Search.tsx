@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useFields } from '../hooks/context/FieldsContext';
 import { useNavigate } from 'react-router-dom';
 import SearchBox from '../components/Search/SearchBox';
@@ -6,12 +6,22 @@ import SearchResultList from '../components/SearchResultList/SearchResultList';
 import { Creative } from "../interfaces/Search/Creative";
 
 import './Search.css'
+import NextButton from '../components/Button/NextButton/NextButton';
 
 const Search: React.FC = () => {
   const { fields, setFields } = useFields();
   const navigate = useNavigate();
   const [addedCreatives, setAddedCreatives] = useState<Creative[]>([]);
   const [searchResults, setSearchResults] = useState<Creative[]>([]);
+  const [isNextButtonEnabled, setIsNextButtonEnabled] = useState(false);
+  
+  const updateNextButtonState = () => {
+    setIsNextButtonEnabled(addedCreatives.length > 0);
+  };
+
+  useEffect(() => {
+    updateNextButtonState();
+  }, [addedCreatives]);
 
   const handleAddCreative = (creative: Creative) => {
     if (!addedCreatives.some(c => c.field.toLowerCase() === creative.field.toLowerCase())) {
@@ -46,6 +56,10 @@ const Search: React.FC = () => {
     navigate('/pricing');
   };
 
+  const handleNextButtonClick = () => {
+    console.log('Search next button clicked!');
+};
+
   return (
     <div className="container">
       <div className="edit-skills">
@@ -68,9 +82,14 @@ const Search: React.FC = () => {
         </div>
 
         <div className="actions">
-          <button onClick={handleSave}>Save</button>
-          <button onClick={() => navigate('/')}>Cancel</button>
-        </div>
+          <button className="cancel-btn" onClick={() => navigate('/')}>Cancel</button>
+          <NextButton 
+            route={"/pricing"} 
+            onClick={handleNextButtonClick} 
+            disabled={!isNextButtonEnabled} 
+            nextPageName={"Add pricing 💰 >"} 
+          />
+      </div>
       </div>
     </div>
   );

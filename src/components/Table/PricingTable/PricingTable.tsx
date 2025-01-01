@@ -4,6 +4,7 @@ import { ProductionPhase } from '../../../interfaces/Phase/ProductionPhase';
 import { Field } from '../../../interfaces/Field/Field';
 import PhaseChips from './PhaseChips';
 import './PricingTable.css';
+import NextButton from '../../Button/NextButton/NextButton';
 
 const allPhases: ProductionPhase[] = [
   "Development",
@@ -99,6 +100,10 @@ const PricingTable: React.FC = () => {
           ))}
         </tbody>
       </table>
+      <NextButton 
+            route={"/profit"} 
+            nextPageName={"Calculate profit 💰 >"} 
+          />
     </div>
   );
 };

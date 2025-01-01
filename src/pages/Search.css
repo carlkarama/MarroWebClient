@@ -111,32 +111,44 @@ html, body {
   }
   
   .actions {
-    display: flex;
+    display: ruby;
     justify-content: space-between;
-  }
+    width: 100%;
+    margin-top: 20px;
+}
   
-  .actions button {
-    padding: 10px 20px;
+  .cancel-btn {
+    width: auto;
+    min-width: 150px;
+    padding: 12px 24px;
+    color: white;
     border: none;
-    background: transparent;
-    color: black;
-    border: 1px solid black;
-    border-radius: 20px;
+    border-radius: 30px;  /* Ensures the pill shape */
+    font-size: 16px;
+    background-color: black;
     cursor: pointer;
-    font-size: 14px;
-  }
+    transition: background-color 0.3s ease;
+    text-decoration: none;
+    display: flex;
+    margin-right: 20px; 
+    align-items: center;
+    justify-content: center;
+    height: 50px;  /* Fixed height to match the next button */
+    box-sizing: border-box;  /* Prevents extra padding from increasing height */
+}
+
   
-  .actions button:hover {
+  .actions > .cancel-btn:hover {
     color: white;
     background-color: black;
   }
   
-  .actions button:last-child {
+  .actions > .cancel-btn {
     background-color: black;
     color: white;
-  }
+  } 
   
-  .actions button:last-child:hover {
+  .actions > .cancel-btn:hover {
     color: white;
     background-color: black;
   }

@@ -1,17 +1,36 @@
 .next-button {
     display: flex;
     justify-content: center;
-}
-
-.next-button > button:disabled {
-    background-color: lightgray;
+    align-items: center;  /* Ensure vertical centering */
+    margin-top: 20px;
 }
 
 .next-button > button {
-    width: 20%;;
+    width: auto;  /* Allow button to size based on content */
+    min-width: 150px;  /* Prevent button from shrinking too much */
+    padding: 12px 24px;
     color: white;
     border: none;
-    border-radius: 15px;
-    font-size: large;
-    background-color: blue;
+    border-radius: 30px;
+    font-size: 16px;
+    background-color: #007BFF;  /* Use a softer blue */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.next-button > button:hover {
+    background-color: #0056b3;
+}
+
+.next-button > button:disabled {
+    background-color: black;
+    cursor: not-allowed;
+}
+
+/* Ensure text inside button is centered */
+.next-button > button > span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
 }
