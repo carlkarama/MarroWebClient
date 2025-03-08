@@ -8,7 +8,7 @@ interface FieldsContextType {
   setCostData: React.Dispatch<React.SetStateAction<{ name: string; cost: number }[]>>;
 }
 
-const FieldsContext = createContext<FieldsContextType | undefined>(undefined);
+export const FieldsContext = createContext<FieldsContextType | undefined>(undefined);
 
 export const useFields = () => {
   const context = useContext(FieldsContext);
