@@ -5,6 +5,7 @@ import { Field } from '../../../interfaces/Field/Field';
 import PhaseChips from './PhaseChips';
 import './PricingTable.css';
 import NextButton from '../../Button/NextButton/NextButton';
+import { useNavigate } from 'react-router-dom';
 
 const allPhases: ProductionPhase[] = [
   "Development",
@@ -14,7 +15,9 @@ const allPhases: ProductionPhase[] = [
 ];
 
 const PricingTable: React.FC = () => {
-  const { fields, setFields } = useFields();
+  const { fields, setFields, setCostData } = useFields();
+  const navigate = useNavigate();
+
 
   const handleFieldChange = (index: number, key: keyof Field, value: string | number | ProductionPhase[]) => {
     const updatedFields = [...fields];
@@ -29,6 +32,16 @@ const PricingTable: React.FC = () => {
     }
 
     setFields(updatedFields);
+  };
+
+  const handleNext = () => {
+    const costData = fields.map(field => ({
+      name: field.fieldName,
+      cost: field.total ?? 0,
+    }));
+  
+    setCostData(costData); 
+    navigate("/profit");
   };
 
   const togglePhaseSelection = (index: number, phase: ProductionPhase) => {
@@ -102,6 +115,7 @@ const PricingTable: React.FC = () => {
       </table>
       <NextButton 
             route={"/profit"} 
+            onClick={handleNext}
             nextPageName={"Calculate profit 💰 >"} 
           />
     </div>

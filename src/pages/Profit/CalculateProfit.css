@@ -1,0 +1,124 @@
+/* General Layout */
+.calculate-profit-container {
+    margin: auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.calculate-profit-header {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+/* Budget Input Section */
+.budget-input-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.budget-label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.budget-label label {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.budget-input {
+    padding: 10px;
+    width: auto;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.client-budget-label {
+    margin-right: 10px; 
+}
+
+.client-budget-input {
+    padding-left: 15px; 
+}
+
+.client-budget-container {
+    display: flex;
+    padding: 10px;
+    align-items: center; /* Align text and input in one line */
+    gap: 20%; /* Adjust spacing between label and input */
+}
+
+/* Profit Summary */
+.profit-summary {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    margin-top: 20px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.charts-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%; /* Ensures full width */
+    max-width: 1000px; /* Adjust based on your layout */
+    margin: 0 auto; /* Centers the charts */
+  }
+
+.profit-summary p {
+    font-size: 16px;
+    margin: 5px 0;
+}
+
+.chart-section {
+    padding: 20px;;
+}
+
+/* Warning Message */
+.warning-message {
+    color: red;
+    font-size: 16px;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Button Styling */
+.calculate-button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    border: none;
+    border-radius: 25px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.calculate-button:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    .budget-input-container {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .budget-input {
+        width: 100%;
+    }
+
+    .charts-container {
+        flex-direction: column; /* Stack charts vertically on smaller screens */
+    }
+}
