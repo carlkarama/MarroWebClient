@@ -4,6 +4,8 @@ import { Field } from '../../interfaces/Field/Field';
 interface FieldsContextType {
   fields: Field[];
   setFields: React.Dispatch<React.SetStateAction<Field[]>>;
+  costData: { name: string; cost: number }[]; 
+  setCostData: React.Dispatch<React.SetStateAction<{ name: string; cost: number }[]>>;
 }
 
 const FieldsContext = createContext<FieldsContextType | undefined>(undefined);
@@ -18,9 +20,10 @@ export const useFields = () => {
 
 export const FieldsProvider: React.FC<{ children: ReactNode }> = ({ children }) => {
   const [fields, setFields] = useState<Field[]>([]);
+  const [costData, setCostData] = useState<{ name: string; cost: number }[]>([]);
 
   return (
-    <FieldsContext.Provider value={{ fields, setFields }}>
+    <FieldsContext.Provider value={{ fields, setFields, costData, setCostData }}>
       {children}
     </FieldsContext.Provider>
   );
