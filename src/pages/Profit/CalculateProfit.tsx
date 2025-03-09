@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { PieChart, Pie, Tooltip, Legend, Cell, BarChart, Bar, XAxis, YAxis, CartesianGrid, ResponsiveContainer } from 'recharts';
 import { FieldsContext } from '../../hooks/context/FieldsContext';
 import './CalculateProfit.css';
+import NextButton from '../../components/Button/NextButton/NextButton';
 
 const COLORS = ['#0088FE', '#00C49F', '#FFBB28', '#FF8042', '#A28DFF', '#FF69B4'];
 
@@ -21,6 +22,7 @@ const CalculateProfit: React.FC = () => {
   const isOverBudget = clientBudget && totalCost > clientBudget;
 
   return (
+    <div>
     <div className="calculate-profit-container">
       <h1>Calculate Profit</h1>
 
@@ -95,6 +97,11 @@ const CalculateProfit: React.FC = () => {
         <p><strong>Profit:</strong> {clientBudget ? `$${profit.toLocaleString()} (${profitMargin}%)` : 'Enter a budget'}</p>
       </div>
     </div>
+    <NextButton 
+            route={"/invoice"} 
+            nextPageName={"Generate invoice 🧾 >"} 
+          />
+    </div>     
   );
 };
 
