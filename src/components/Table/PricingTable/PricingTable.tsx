@@ -22,27 +22,28 @@ const PricingTable: React.FC = () => {
   const handleFieldChange = (index: number, key: keyof Field, value: string | number | ProductionPhase[]) => {
     const updatedFields = [...fields];
     updatedFields[index] = { ...updatedFields[index], [key]: value };
-
-    if (key === 'price' || key === 'hours' || key == 'pricingType') {
-      if (updatedFields[index].pricingType == 'Per Project') {
-        updatedFields[index].total = parseFloat(updatedFields[index].price);
+  
+    if (key === 'price' || key === 'hours' || key === 'pricingType') {
+      if (updatedFields[index].pricingType === 'Per Project') {
+        updatedFields[index].total = updatedFields[index].price;
       } else {
-        updatedFields[index].total = parseFloat(updatedFields[index].price) * parseFloat(updatedFields[index].hours.toString());
+        updatedFields[index].total = updatedFields[index].price * parseFloat(updatedFields[index].hours.toString());
       }  
     }
-
+  
     setFields(updatedFields);
-  };
+  };  
 
   const handleNext = () => {
     const costData = fields.map(field => ({
       name: field.fieldName,
       cost: field.total ?? 0,
+      productionPhases: field.phases ?? [],
     }));
   
     setCostData(costData); 
     navigate("/profit");
-  };
+  };  
 
   const togglePhaseSelection = (index: number, phase: ProductionPhase) => {
     const updatedFields = [...fields];

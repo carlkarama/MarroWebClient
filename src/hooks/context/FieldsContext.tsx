@@ -1,7 +1,7 @@
 import React, { createContext, useContext, useState, ReactNode } from 'react';
 import { Field } from '../../interfaces/Field/Field';
 
-interface FieldsContextType {
+export interface FieldsContextType {
   fields: Field[];
   setFields: React.Dispatch<React.SetStateAction<Field[]>>;
   costData: { name: string; cost: number }[]; 

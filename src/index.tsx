@@ -9,6 +9,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { FieldsProvider } from './hooks/context/FieldsContext';
 import CalculateProfit from './pages/Profit/CalculateProfit';
+import Invoice from './pages/Invoice/Invoice';
 
 const root = ReactDOM.createRoot(document.getElementById('root') as HTMLElement);
 root.render(
@@ -20,6 +21,7 @@ root.render(
           <Route path='/rate' element={<Rate/>}></Route>
           <Route path="/pricing" element={<PricingTable/>} />
           <Route path="/profit" element={<CalculateProfit/>} />
+          <Route path="/invoice" element={<Invoice/>} />
         </Routes>
       </BrowserRouter>
   </FieldsProvider>
