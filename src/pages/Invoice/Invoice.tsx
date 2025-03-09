@@ -20,17 +20,19 @@ const Invoice: React.FC = () => {
 
   // Generate PDF Invoice
   const generatePDF = () => {
+    const invoiceNumber = generateInvoiceNumber();
     const doc = new jsPDF();
+
     doc.setFontSize(18);
     doc.text("Invoice", 14, 20);
     doc.setFontSize(12);
-    doc.text(`Business Name: ${businessName}`, 14, 30);
-    doc.text(`Email: ${businessEmail}`, 14, 40);
-    doc.text(`Address: ${businessAddress}`, 14, 50);
+    doc.text(`Invoice Number: ${invoiceNumber}`, 14, 30);
+    doc.text(`Business Name: ${businessName}`, 14, 40);
+    doc.text(`Email: ${businessEmail}`, 14, 50);
+    doc.text(`Address: ${businessAddress}`, 14, 60);
   
-    // Ensure autoTable is correctly used
     autoTable(doc, {
-      startY: 60,
+      startY: 70,
       head: [["Role", "Cost", "Production Phases"]],
       body: fields.map((field) => [
         field.fieldName,
@@ -39,16 +41,27 @@ const Invoice: React.FC = () => {
       ]),
     });
   
-    // Ensure doc.lastAutoTable is used correctly
-    const finalY = (doc as any).lastAutoTable.finalY || 70;
+    const finalY = (doc as any).lastAutoTable.finalY || 80;
   
     doc.text(`Subtotal: $${subtotal.toLocaleString()}`, 14, finalY + 10);
     doc.text(`Discount: -$${discountAmount.toLocaleString()} (${discount}%)`, 14, finalY + 20);
     doc.text(`Tax: +$${taxAmount.toLocaleString()} (${taxRate}%)`, 14, finalY + 30);
     doc.text(`Total: $${finalTotal.toLocaleString()}`, 14, finalY + 40);
   
-    doc.save("invoice.pdf");
+    doc.save(`invoice-${invoiceNumber}.pdf`);
   };
+
+  const generateInvoiceNumber = () => {
+    const now = new Date();
+    const yy = now.getFullYear().toString().slice(-2); // Get last two digits of the year
+    const mm = String(now.getMonth() + 1).padStart(2, "0"); // Month (01-12)
+    const dd = String(now.getDate()).padStart(2, "0"); // Day (01-31)
+    const hh = String(now.getHours()).padStart(2, "0"); // 24-hour format
+    const min = String(now.getMinutes()).padStart(2, "0"); // Minutes (00-59)
+    const sec = String(now.getSeconds()).padStart(2, "0"); // Seconds (00-59)
+  
+    return `${yy}${mm}${dd}${hh}${min}${sec}`;
+  };  
 
   return (
     <div className="invoice-container">
