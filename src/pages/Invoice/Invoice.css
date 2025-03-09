@@ -1,11 +1,15 @@
 .invoice-container {
-    /* max-width: 800px; */
+    max-width: 1000px;
     margin: auto;
     padding: 20px;
     background: #fff;
     width: 350%;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     /* border-radius: 8px; */
+    justify-content: center;
+    align-items: center;
+    right: 300px;
+    position:relative;
   }
   
   h1 {
